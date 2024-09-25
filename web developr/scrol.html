@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smooth Scrolling Sections</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+        section {
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: white;
+            text-align: center;
+            transition: background-color 1s ease;
+        }
+        #section1 { background-color: #ff4c4c; }
+        #section2 { background-color: #4caf50; }
+        #section3 { background-color: #2196f3; }
+        #section4 { background-color: #ffeb3b; }
+        #section5 { background-color: #9c27b0; }
+        #section6 { background-color: #e91e63; }
+        #section7 { background-color: #00bcd4; }
+    </style>
+</head>
+<body>
+    <section id="section1">    <table>
+        <caption class="periods">PERIODS</caption>
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+            </tr>
+        </thead>
+        <caption class="class">CLASS</caption>
+        <thead>
+            <tr>
+                <th>PG</th>
+                <th>NURSERY</th>
+                <th>PREP</th>
+                <th>ONE</th>
+                <th>THREE</th>
+                <th>FOUR</th>
+                <th>FIVE</th>
+                <th>SIX</th>
+                <th>SEVEN</th>
+                <th>EIGHT</th>
+                <th>NINE</th>
+                <th>TEN</th>
+            </tr>
+        </thead>
+        <caption class="time">TIME</caption>
+        <thead>
+            <tr>
+                <th>8:30-9:00</th>
+                <th>9:00-9:30</th>
+                <th>9:30-10:00</th>
+                <th>10:00-10:30</th>
+                <th>10:30-11:00</th>
+                <th>11:00-11:30</th>
+                <th>11:30-12:00</th>
+                <th>12:00-12:30</th>
+                <th>12:30-1:00</th>
+                <th>1:00-1:30</th>
+                <th>1:30-2:00</th>
+                <th>2:00-2:30</th>
+            </tr>
+        </thead>
+        <caption class="teachers">TEACHERS</caption>
+        <tbody>
+            <tr>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+            </tr>
+            <tr>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+            <tr>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir bilal</td>
+                <td>sir hassan</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir waqas</td>
+                <td>sir rao</td>
+            </tr>
+            <tr>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+                <td>sir naveed</td>
+                <td>sir sultan</td>
+                <td>sir yameen</td>
+                <td>mam ayesha</td>
+                <td>sir alam</td>
+                <td>sir khalid</td>
+            </tr>
+            <tr>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+            </tr>
+            <tr>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+        </tbody>
+    </table></section>
+    <section id="section2"><table>
+        <caption class="periods">PERIODS</caption>
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+            </tr>
+        </thead>
+        <caption class="class">CLASS</caption>
+        <thead>
+            <tr>
+                <th>PG</th>
+                <th>NURSERY</th>
+                <th>PREP</th>
+                <th>ONE</th>
+                <th>THREE</th>
+                <th>FOUR</th>
+                <th>FIVE</th>
+                <th>SIX</th>
+                <th>SEVEN</th>
+                <th>EIGHT</th>
+                <th>NINE</th>
+                <th>TEN</th>
+            </tr>
+        </thead>
+        <caption class="time">TIME</caption>
+        <thead>
+            <tr>
+                <th>8:30-9:00</th>
+                <th>9:00-9:30</th>
+                <th>9:30-10:00</th>
+                <th>10:00-10:30</th>
+                <th>10:30-11:00</th>
+                <th>11:00-11:30</th>
+                <th>11:30-12:00</th>
+                <th>12:00-12:30</th>
+                <th>12:30-1:00</th>
+                <th>1:00-1:30</th>
+                <th>1:30-2:00</th>
+                <th>2:00-2:30</th>
+            </tr>
+        </thead>
+        <caption class="teachers">TEACHERS</caption>
+        <tbody>
+            <tr>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+            </tr>
+            <tr>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+            <tr>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir bilal</td>
+                <td>sir hassan</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir waqas</td>
+                <td>sir rao</td>
+            </tr>
+            <tr>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+                <td>sir naveed</td>
+                <td>sir sultan</td>
+                <td>sir yameen</td>
+                <td>mam ayesha</td>
+                <td>sir alam</td>
+                <td>sir khalid</td>
+            </tr>
+            <tr>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+            </tr>
+            <tr>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+        </tbody>
+    </table></section>
+    <section id="section3"><table>
+        <caption class="periods">PERIODS</caption>
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+            </tr>
+        </thead>
+        <caption class="class">CLASS</caption>
+        <thead>
+            <tr>
+                <th>PG</th>
+                <th>NURSERY</th>
+                <th>PREP</th>
+                <th>ONE</th>
+                <th>THREE</th>
+                <th>FOUR</th>
+                <th>FIVE</th>
+                <th>SIX</th>
+                <th>SEVEN</th>
+                <th>EIGHT</th>
+                <th>NINE</th>
+                <th>TEN</th>
+            </tr>
+        </thead>
+        <caption class="time">TIME</caption>
+        <thead>
+            <tr>
+                <th>8:30-9:00</th>
+                <th>9:00-9:30</th>
+                <th>9:30-10:00</th>
+                <th>10:00-10:30</th>
+                <th>10:30-11:00</th>
+                <th>11:00-11:30</th>
+                <th>11:30-12:00</th>
+                <th>12:00-12:30</th>
+                <th>12:30-1:00</th>
+                <th>1:00-1:30</th>
+                <th>1:30-2:00</th>
+                <th>2:00-2:30</th>
+            </tr>
+        </thead>
+        <caption class="teachers">TEACHERS</caption>
+        <tbody>
+            <tr>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+            </tr>
+            <tr>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+            <tr>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir bilal</td>
+                <td>sir hassan</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir waqas</td>
+                <td>sir rao</td>
+            </tr>
+            <tr>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+                <td>sir naveed</td>
+                <td>sir sultan</td>
+                <td>sir yameen</td>
+                <td>mam ayesha</td>
+                <td>sir alam</td>
+                <td>sir khalid</td>
+            </tr>
+            <tr>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+            </tr>
+            <tr>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+        </tbody>
+    </table></section>
+    <section id="section4"><table>
+        <caption class="periods">PERIODS</caption>
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+            </tr>
+        </thead>
+        <caption class="class">CLASS</caption>
+        <thead>
+            <tr>
+                <th>PG</th>
+                <th>NURSERY</th>
+                <th>PREP</th>
+                <th>ONE</th>
+                <th>THREE</th>
+                <th>FOUR</th>
+                <th>FIVE</th>
+                <th>SIX</th>
+                <th>SEVEN</th>
+                <th>EIGHT</th>
+                <th>NINE</th>
+                <th>TEN</th>
+            </tr>
+        </thead>
+        <caption class="time">TIME</caption>
+        <thead>
+            <tr>
+                <th>8:30-9:00</th>
+                <th>9:00-9:30</th>
+                <th>9:30-10:00</th>
+                <th>10:00-10:30</th>
+                <th>10:30-11:00</th>
+                <th>11:00-11:30</th>
+                <th>11:30-12:00</th>
+                <th>12:00-12:30</th>
+                <th>12:30-1:00</th>
+                <th>1:00-1:30</th>
+                <th>1:30-2:00</th>
+                <th>2:00-2:30</th>
+            </tr>
+        </thead>
+        <caption class="teachers">TEACHERS</caption>
+        <tbody>
+            <tr>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+            </tr>
+            <tr>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+            <tr>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir bilal</td>
+                <td>sir hassan</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir waqas</td>
+                <td>sir rao</td>
+            </tr>
+            <tr>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+                <td>sir naveed</td>
+                <td>sir sultan</td>
+                <td>sir yameen</td>
+                <td>mam ayesha</td>
+                <td>sir alam</td>
+                <td>sir khalid</td>
+            </tr>
+            <tr>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+            </tr>
+            <tr>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+        </tbody>
+    </table></section>
+    <section id="section5"><table>
+        <caption class="periods">PERIODS</caption>
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+            </tr>
+        </thead>
+        <caption class="class">CLASS</caption>
+        <thead>
+            <tr>
+                <th>PG</th>
+                <th>NURSERY</th>
+                <th>PREP</th>
+                <th>ONE</th>
+                <th>THREE</th>
+                <th>FOUR</th>
+                <th>FIVE</th>
+                <th>SIX</th>
+                <th>SEVEN</th>
+                <th>EIGHT</th>
+                <th>NINE</th>
+                <th>TEN</th>
+            </tr>
+        </thead>
+        <caption class="time">TIME</caption>
+        <thead>
+            <tr>
+                <th>8:30-9:00</th>
+                <th>9:00-9:30</th>
+                <th>9:30-10:00</th>
+                <th>10:00-10:30</th>
+                <th>10:30-11:00</th>
+                <th>11:00-11:30</th>
+                <th>11:30-12:00</th>
+                <th>12:00-12:30</th>
+                <th>12:30-1:00</th>
+                <th>1:00-1:30</th>
+                <th>1:30-2:00</th>
+                <th>2:00-2:30</th>
+            </tr>
+        </thead>
+        <caption class="teachers">TEACHERS</caption>
+        <tbody>
+            <tr>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+            </tr>
+            <tr>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+            <tr>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir bilal</td>
+                <td>sir hassan</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir waqas</td>
+                <td>sir rao</td>
+            </tr>
+            <tr>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+                <td>sir naveed</td>
+                <td>sir sultan</td>
+                <td>sir yameen</td>
+                <td>mam ayesha</td>
+                <td>sir alam</td>
+                <td>sir khalid</td>
+            </tr>
+            <tr>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+            </tr>
+            <tr>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+        </tbody>
+    </table></section>
+    <section id="section6"><table>
+        <caption class="periods">PERIODS</caption>
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+            </tr>
+        </thead>
+        <caption class="class">CLASS</caption>
+        <thead>
+            <tr>
+                <th>PG</th>
+                <th>NURSERY</th>
+                <th>PREP</th>
+                <th>ONE</th>
+                <th>THREE</th>
+                <th>FOUR</th>
+                <th>FIVE</th>
+                <th>SIX</th>
+                <th>SEVEN</th>
+                <th>EIGHT</th>
+                <th>NINE</th>
+                <th>TEN</th>
+            </tr>
+        </thead>
+        <caption class="time">TIME</caption>
+        <thead>
+            <tr>
+                <th>8:30-9:00</th>
+                <th>9:00-9:30</th>
+                <th>9:30-10:00</th>
+                <th>10:00-10:30</th>
+                <th>10:30-11:00</th>
+                <th>11:00-11:30</th>
+                <th>11:30-12:00</th>
+                <th>12:00-12:30</th>
+                <th>12:30-1:00</th>
+                <th>1:00-1:30</th>
+                <th>1:30-2:00</th>
+                <th>2:00-2:30</th>
+            </tr>
+        </thead>
+        <caption class="teachers">TEACHERS</caption>
+        <tbody>
+            <tr>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+            </tr>
+            <tr>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+            <tr>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir bilal</td>
+                <td>sir hassan</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir waqas</td>
+                <td>sir rao</td>
+            </tr>
+            <tr>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+                <td>sir naveed</td>
+                <td>sir sultan</td>
+                <td>sir yameen</td>
+                <td>mam ayesha</td>
+                <td>sir alam</td>
+                <td>sir khalid</td>
+            </tr>
+            <tr>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+            </tr>
+            <tr>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+        </tbody>
+    </table></section>
+    <section id="section7"><table>
+        <caption class="periods">PERIODS</caption>
+        <thead>
+            <tr>
+                <th>1</th>
+                <th>2</th>
+                <th>3</th>
+                <th>4</th>
+                <th>5</th>
+                <th>6</th>
+                <th>7</th>
+                <th>8</th>
+                <th>9</th>
+                <th>10</th>
+                <th>11</th>
+                <th>12</th>
+            </tr>
+        </thead>
+        <caption class="class">CLASS</caption>
+        <thead>
+            <tr>
+                <th>PG</th>
+                <th>NURSERY</th>
+                <th>PREP</th>
+                <th>ONE</th>
+                <th>THREE</th>
+                <th>FOUR</th>
+                <th>FIVE</th>
+                <th>SIX</th>
+                <th>SEVEN</th>
+                <th>EIGHT</th>
+                <th>NINE</th>
+                <th>TEN</th>
+            </tr>
+        </thead>
+        <caption class="time">TIME</caption>
+        <thead>
+            <tr>
+                <th>8:30-9:00</th>
+                <th>9:00-9:30</th>
+                <th>9:30-10:00</th>
+                <th>10:00-10:30</th>
+                <th>10:30-11:00</th>
+                <th>11:00-11:30</th>
+                <th>11:30-12:00</th>
+                <th>12:00-12:30</th>
+                <th>12:30-1:00</th>
+                <th>1:00-1:30</th>
+                <th>1:30-2:00</th>
+                <th>2:00-2:30</th>
+            </tr>
+        </thead>
+        <caption class="teachers">TEACHERS</caption>
+        <tbody>
+            <tr>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+            </tr>
+            <tr>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir bilal</td>
+                <td>sir rao</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+            <tr>
+                <td>sir rao</td>
+                <td>sir umar</td>
+                <td>sir bilal</td>
+                <td>sir hassan</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir umar</td>
+                <td>sir ali</td>
+                <td>sir ahmed</td>
+                <td>sir hassan</td>
+                <td>sir waqas</td>
+                <td>sir rao</td>
+            </tr>
+            <tr>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+                <td>sir naveed</td>
+                <td>sir sultan</td>
+                <td>sir yameen</td>
+                <td>mam ayesha</td>
+                <td>sir alam</td>
+                <td>sir khalid</td>
+            </tr>
+            <tr>
+                <td>sir tahir</td>
+                <td>mam huma</td>
+                <td>sir sajid</td>
+                <td>sir zahoor</td>
+                <td>sir bilal</td>
+                <td>mam alia</td>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+            </tr>
+            <tr>
+                <td>sir naeem</td>
+                <td>sir naseer</td>
+                <td>sir shah</td>
+                <td>sir masood</td>
+                <td>sir adeel</td>
+                <td>mam hajra</td>
+                <td>sir afnan</td>
+                <td>mam saniya</td>
+                <td>sir ahmed</td>
+                <td>sir asil</td>
+                <td>sir bilal</td>
+                <td>sir basit</td>
+            </tr>
+        </tbody>
+    </table></section>
+
+    <script>
+        // Function to scroll to the next section
+        function scrollToNextSection() {
+            const sections = document.querySelectorAll('section');
+            let currentIndex = Array.from(sections).findIndex(section =>
+                window.scrollY < section.offsetTop + section.offsetHeight
+            );
+            
+            if (currentIndex === -1 || currentIndex === sections.length - 1) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
+
+            sections[currentIndex].scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Automatically scroll every 5 seconds
+        setInterval(scrollToNextSection, 5000);
+
+        // Optional: Smooth scrolling behavior for clicking links (if you add navigation links)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

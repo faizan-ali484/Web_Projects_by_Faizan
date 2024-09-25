@@ -1,0 +1,135 @@
+<html>
+<head><style>
+*{padding:0;margin:0;box-size:border:box;background-color:black;}
+.container{
+height:100vh;
+display:grid;
+grid-template-columns:1fr 1fr 1fr 1fr 1fr;
+grid-template-rows:0.5fr 0.2fr 0.6fr 0.2fr ;
+grid-template-areas:"nav nav nav nav nav"
+                    "slidebar main main main main"
+"slidebar box1 box2 box3 box4"
+                    "slidebar footer footer footer footer";
+grid-gap:0.8rem;
+text-align:center;
+font-size:30px;
+color:black;
+}
+
+nav{
+background-color:yellow;
+grid-area:nav;
+}
+main{
+background-color:red;
+grid-area:main;
+}
+.box1{
+background-color:purple;
+grid-area:box1;
+font-size: clamp(1rem, 1.380vw + 2.164rem, 2rem);
+
+}
+.box2{
+background-color:brown;
+grid-area:box2;
+font-size: clamp(1rem, 1.380vw + 2.164rem, 2rem);
+}
+.box3{
+background-color:orange;
+grid-area:box3;
+font-size: clamp(1rem, 1.380vw + 2.164rem, 2rem);
+}
+.box4{
+background-color:cyan;
+font-size: clamp(1rem, 1.380vw + 2.164rem, 2rem);
+}
+.slidebar{
+background-color:pink;
+grid-area:slidebar;
+}
+footer{
+background-color:tomato;
+grid-area:footer;
+}
+
+@media only screen and (max-width:760px){
+.container{
+grid-template-columns:1fr;
+grid-template-rows:0.4fr 1fr 0.7fr 0.6fr 0.6fr 0.6fr 0.6fr 0.5fr;
+grid-template-areas:"nav"
+"main"
+"slidebar"
+"box1"
+"box2"
+"box3"
+"box4"
+"footer";}}
+
+@media only screen and (max-width:1360px){
+.container{
+grid-template-columns:1fr 1fr;
+grid-template-rows:0.4fr 1fr 0.7fr 0.6fr 0.6fr 0.6fr 0.6fr 0.5fr;
+grid-template-areas:"nav"
+"main main"
+"slidebar box1"
+"box1"
+"box2"
+"box3 box3"
+"box4"
+"footer";}}
+
+
+@media only screen and (max-width:1024px){
+.container{
+grid-template-columns:1fr;
+grid-template-rows:0.4fr 1fr 0.7fr 0.6fr 0.6fr 0.6fr 0.6fr 0.5fr;
+grid-template-areas:"nav"
+"main"
+"slidebar"
+"box1"
+"box2"
+"box3"
+"box4"
+"footer";}}
+
+
+
+
+
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+<nav>NAV</nav>
+<main>MAIN</main>
+<div class="slidebar">Slidebar</div>
+<div class="box1">A quick brown fox jumps over the lazy dog.A quick brown fox jumps over the lazy dog.A quick brown fox jumps over the lazy dog.A quick brown fox jumps over the lazy dog.A quick brown fox jumps over the lazy dog.A quick brown fox jumps over the lazy dog.</div>
+<div class="box2">Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.Practice makes a man perfect.</div>
+<div class="box3">discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.discipline is the key to success.</div>
+<div class="box4">name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.name of my country is pakistan.</div>
+<footer>Footer</footer>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

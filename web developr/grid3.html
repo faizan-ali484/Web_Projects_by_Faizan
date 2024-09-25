@@ -1,0 +1,109 @@
+<html>
+<head><style>
+*{padding:0;margin:0;box-size:border-box;background-color:#f0ffff;}
+.container{
+display:grid;
+height:200vh;
+grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+grid-template-rows:0.4fr 2.3fr 1.3fr 0.8fr 0.8fr 1.3fr;
+grid-template-areas:"nav nav nav nav nav nav"
+                    "main main main main main main"
+                    "box1 box1 box2 box2 box3 box3"   					
+                    "smallbox1 smallbox2 empty empty empty empty"
+                    "smallbox3 smallbox4 empty empty empty empty"
+					"box4 box4  box5 box5 box6 box6" ;
+grid-gap:0.8rem;
+text-align:center;
+color:black;
+font-size:30px;
+
+}
+
+
+
+
+
+nav{
+background-color:#F6D242;
+grid-area:nav;
+}
+main{
+background-color:#FD6E6A;
+grid-area:main;
+}
+.box1{
+background-color:#FFF886;
+grid-area:box1;
+
+}
+
+.box2{
+background-color:#FFF3B0;
+grid-area:box2;
+}
+.box3{
+background-color:#A0FE65;
+grid-area:box3;
+}
+.smallbox1{
+background-color:#F97794;
+grid-area:smallbox1;
+
+}
+.smallbox2{
+background-color:#90F7EC;
+grid-area:smallbox2;
+}
+.empty{
+
+grid-area:empty;
+
+}
+.smallbox3{
+background-color:#FEB692;
+grid-area:smallbox3;
+}
+.smallbox4{
+background-color:#FFCF71;
+grid-area:smallbox4;
+
+}
+.box4{
+background-color:#BC78EC;
+grid-area:box4;
+}
+.box5{
+background-color:#FFA8A8;
+grid-area:box5
+
+}
+.box6{
+background-color:#3C8CE7;
+grid-area:box6;
+
+}
+
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+<nav style="padding:20px;">NAV</nav>
+<main style="padding:200px;">MAIN</main>
+<div class="box1" style="padding:100px;">BOX1</div>
+<div class="box2" style="padding:100px;">BOX2</div>
+<div class="box3" style="padding:100px;">BOX3</div>
+<div class="smallbox1" style="padding:50px;">SMALLBOX1</div>
+<div class="smallbox2" style="padding:50px;">SMALLBOX2</div>
+<div class="empty"></div>
+<div class="smallbox3" style="padding:50px;">SMALLBOX3</div>
+<div class="smallbox4" style="padding:50px;">SMALLBOX4</div>
+<div class="box4" style="padding:100px;">BOX4</div>
+<div class="box5" style="padding:100px;">BOX5</div>
+<div class="box6" style="padding:100px;">BOX6</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<html>
+
+
+<head><style>
+*{padding:0;margin:0;box-size:border-box}
+.container{
+display:grid;
+height:100vh;
+grid-template-columns:1fr 1fr 1fr 1fr;
+grid-template-rows:0.4fr 1fr 0.7fr 0.3fr;
+grid-template-areas:"nav nav nav nav"
+                     "slidebar main main main"
+                      "slidebar box1 box2 box3"
+                     "slidebar footer footer footer";
+grid-gap:0.6rem;
+text-align:center;
+color:white;
+font-size:25px;
+}
+
+
+
+nav{
+background-color:red;
+grid-area:nav;
+
+}
+main{
+background-color:blue;
+grid-area:main;
+}
+.box1{
+grid-area:box1;
+background-color:purple;
+
+}
+.box2{
+grid-area:box2;
+background-color:brown;
+
+}
+.box3{
+grid-area:box3;
+background-color:orange;
+
+}
+.slidebar{
+background-color:pink;
+grid-area:slidebar;
+}
+footer{
+grid-area:footer;
+background-color:tomato;
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+<nav>nav</nav>
+<main>main</main>
+<div class="slidebar">slidebar</div>
+<div class="box1">box1</div>
+<div class="box2">box2</div>
+<div class="box3">box3</div>
+<footer>footer</footer>
+</div>
+</body>
+
+
+
+
+</html>

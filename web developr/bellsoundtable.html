@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timetable</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: black;
+            scroll-behavior: smooth; /* Smooth scrolling */
+        }
+        .header {
+            width: 45%;
+            height: 50px;
+            background-color: orange;
+            text-align: center;
+            color: black;
+            font-size: 30px;
+        }
+        .container {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            margin-top: 20px;
+            padding: 0 10px;
+        }
+        .timetable {
+            border-collapse: collapse;
+            width: 100%;
+            table-layout: fixed;
+            border: 2px solid black;
+        }
+        .timetable td {
+            width: 80px;
+            height: 150px;
+            text-align: center;
+            vertical-align: middle;
+            padding: 5px;
+            font-size: 20px;
+        }
+        .teachers { background-color: green; color: white; }
+        .tea { background-color: brown; color: white; }
+        .teach { background-color: gray; color: white; }
+        .teaches { background-color: red; color: white; }
+        h1 {
+            color: white;
+            margin-left: 300px;
+        }
+        .bro { background-color: hotpink; }
+        .last { background-color: skyblue; }
+        .lastly { background-color: coral; }
+        section {
+            padding: 50px 0; /* Adds spacing around sections */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Section 1 -->
+<section id="first-period">
+    <table border="2px" style="width: 100%;">
+        <tr>
+            <td class="header">Male Block</td>
+            <td class="header">Female Block</td>
+        </tr>
+    </table>
+    <h1>1st period</h1>
+    <h1>Time: 9:00 to 9:40</h1>
+    <!-- Timetable Content for First Period -->
+    <div class="container">
+        <table class="timetable">
+            <tr class="tea">
+                <td style="background-color: lightgray; color: black; font-size: 25px;">Teachers</td>
+                <td>Sir Tahir</td>
+                <td>Sir Mubashir</td>
+                <td>Sir Waseem</td>
+                <td>Sir Yameen</td>
+                <td>Sir Naveed</td>
+                <td>Sir Faizi</td>
+                <td>Sir Adnan</td>
+            </tr>
+            <tr class="teachers">
+                <td style="background-color: lightgray; color: black; font-size: 25px;">Subject</td>
+                <td>Computer</td>
+                <td>Chemistry</td>
+                <td>Urdu</td>
+                <td>English</td>
+                <td>Maths</td>
+                <td>Pak Study</td>
+                <td>Physics</td>
+            </tr>
+            <tr class="tea">
+                <td style="background-color: lightgray; color: black; font-size: 25px;">Class</td>
+                <td>I-1</td>
+                <td>I-2</td>
+                <td>I-3</td>
+                <td>I-4</td>
+                <td>I-5</td>
+                <td>I-6</td>
+                <td>I-7</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- Section 2 -->
+<section id="third-period">
+    <h1>3rd period</h1>
+    <h1>Time: 9:40 to 10:20</h1>
+    <!-- Timetable Content for Third Period -->
+    <div class="container">
+        <table class="timetable">
+            <tr class="teach">
+                <td style="background-color: lightgray; color: black; font-size: 25px;">Teachers</td>
+                <td>Sir Tahir</td>
+                <td>Sir Mubashir</td>
+                <td>Sir Waseem</td>
+                <td>Sir Yameen</td>
+                <td>Sir Naveed</td>
+                <td>Sir Faizi</td>
+                <td>Sir Adnan</td>
+            </tr>
+            <tr class="bro">
+                <td style="background-color: lightgray; color: black; font-size: 25px;">Subject</td>
+                <td>Computer</td>
+                <td>Chemistry</td>
+                <td>Urdu</td>
+                <td>English</td>
+                <td>Maths</td>
+                <td>Pak Study</td>
+                <td>Physics</td>
+            </tr>
+            <tr class="teach">
+                <td style="background-color: lightgray; color: black; font-size: 25px;">Class</td>
+                <td>I-1</td>
+                <td>I-2</td>
+                <td>I-3</td>
+                <td>I-4</td>
+                <td>I-5</td>
+                <td>I-6</td>
+                <td>I-7</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- Section 3 -->
+<section id="fifth-period">
+    <h1>5th period</h1>
+    <h1>Time: 10:20 to 11:00</h1>
+    <!-- Timetable Content for Fifth Period -->
+    <div class="container">
+        <table class="timetable">
+            <tr class="last">
+                <td style="background-color: lightgray; color: black; font-size: 25px;">Teachers</td>
+                <td>Sir Tahir</td>
+                <td>Sir Mubashir</td>
+                <td>Sir Waseem</td>
+                <td>Sir Yameen</td>
+                <td>Sir Naveed</td>
+                <td>Sir Faizi</td>
+                <td>Sir Adnan</td>
+            </tr>
+            <tr class="lastly">
+                <td style="background-color: lightgray; color: black; font-size: 25px;">Subject</td>
+                <td>Computer</td>
+                <td>Chemistry</td>
+                <td>Urdu</td>
+                <td>English</td>
+                <td>Maths</td>
+                <td>Pak Study</td>
+                <td>Physics</td>
+            </tr>
+            <tr class="last">
+                <td style="background-color: lightgray; color: black; font-size: 25px;">Class</td>
+                <td>I-1</td>
+                <td>I-2</td>
+                <td>I-3</td>
+                <td>I-4</td>
+                <td>I-5</td>
+                <td>I-6</td>
+                <td>I-7</td>
+            </tr>
+        </table>
+    </div>
+</section>
+
+<!-- Bell Sound -->
+<audio id="bell-sound">
+    <source src="C:\Users\Rao umar\Downloads\school-bell-199584.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+    const bellSound = document.getElementById('bell-sound');
+    const sections = document.querySelectorAll('section');
+
+    // Function to play the sound when hovering over a section
+    function playSound() {
+        // Stop the sound if it is playing and reset it to the beginning
+        bellSound.pause();
+        bellSound.currentTime = 0; // Reset the sound to the beginning
+        bellSound.play().catch(error => {
+            console.error("Error playing sound:", error);
+        });
+    }
+
+    // Attach the hover event listener to each section
+    sections.forEach(section => {
+        section.addEventListener('mouseenter', playSound);
+    });
+
+    // Smooth scrolling between sections automatically for demonstration
+    let currentSection = 0;
+    function smoothScrollToNextSection() {
+        if (currentSection < sections.length) {
+            sections[currentSection].scrollIntoView({ behavior: 'smooth' });
+            currentSection++;
+        } else {
+            currentSection = 0; // Reset to the first section
+        }
+    }
+
+    // Automatically scroll every 5 seconds
+    setInterval(smoothScrollToNextSection, 5000);
+</script>
+
+
+
+</body>
+</html>

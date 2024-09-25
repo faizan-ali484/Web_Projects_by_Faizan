@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Timetable</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .timetable {
+            width: 100%;
+            max-width: 800px;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .timetable th, .timetable td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .timetable th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .timetable td {
+            background-color: #fafafa;
+        }
+
+        .timetable caption {
+            font-size: 1.5em;
+            margin: 10px 0;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .time {
+            background-color: #e8f5e9;
+        }
+
+        .subject {
+            background-color: #f9fbe7;
+        }
+
+        .break {
+            background-color: #ffe0b2;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <table class="timetable">
+        <caption>Weekly Timetable</caption>
+        <thead>
+            <tr>
+                <th>Time</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="time">08:00 - 09:00</td>
+                <td class="subject">Math</td>
+                <td class="subject">English</td>
+                <td class="subject">Science</td>
+                <td class="subject">History</td>
+                <td class="subject">Geography</td>
+            </tr>
+            <tr>
+                <td class="time">09:00 - 10:00</td>
+                <td class="subject">English</td>
+                <td class="subject">Math</td>
+                <td class="subject">Art</td>
+                <td class="subject">Math</td>
+                <td class="subject">Science</td>
+            </tr>
+            <tr>
+                <td class="time">10:00 - 10:30</td>
+                <td colspan="5" class="break">Break</td>
+            </tr>
+            <tr>
+                <td class="time">10:30 - 11:30</td>
+                <td class="subject">Science</td>
+                <td class="subject">History</td>
+                <td class="subject">English</td>
+                <td class="subject">Geography</td>
+                <td class="subject">Math</td>
+            </tr>
+            <tr>
+                <td class="time">11:30 - 12:30</td>
+                <td class="subject">History</td>
+                <td class="subject">Science</td>
+                <td class="subject">Math</td>
+                <td class="subject">English</td>
+                <td class="subject">Art</td>
+            </tr>
+            <tr>
+                <td class="time">12:30 - 01:30</td>
+                <td colspan="5" class="break">Lunch</td>
+            </tr>
+            <tr>
+                <td class="time">01:30 - 02:30</td>
+                <td class="subject">Geography</td>
+                <td class="subject">Art</td>
+                <td class="subject">History</td>
+                <td class="subject">Science</td>
+                <td class="subject">English</td>
+            </tr>
+            <tr>
+                <td class="time">02:30 - 03:30</td>
+                <td class="subject">Art</td>
+                <td class="subject">Geography</td>
+                <td class="subject">Geography</td>
+                <td class="subject">Art</td>
+                <td class="subject">History</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

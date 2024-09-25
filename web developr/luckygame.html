@@ -1,0 +1,26 @@
+<html>
+<head></head>
+<body>
+
+
+
+<input type="text"  id="numberEntered">
+
+
+<input type="button"  value="guess"   id="checkGuess">
+<script type="text/javascript">
+document.getElementById("checkGuess").onclick=function()
+{
+var randomNumber=Math.random();
+   randomNumber=randomNumber*700;
+   randomNumber=Math.floor(randomNumber);
+if(document.getElementById("numberEntered").value==randomNumber){
+alert("you got it");
+}
+else{
+alert("the number is" +randomNumber);
+}
+}
+</script>
+</body>
+</html>   

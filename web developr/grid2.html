@@ -1,0 +1,130 @@
+<html>
+<head><style>
+*{padding:0;margin:0;box-size:border-box;background-color:yellow;}
+.container{
+display:grid;
+height:200vh;
+grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;
+grid-template-rows:0.4fr 2.3fr 1.3fr 0.8fr 0.8fr 1.3fr;
+grid-template-areas:"nav nav nav nav nav nav"
+                    "main main main main main main"
+                    "box1 box1 box2 box2 box3 box3"   					
+                    "smallbox1 smallbox2 empty empty empty empty"
+                    "smallbox3 smallbox4 empty empty empty empty"
+					"box4 box4  box5 box5 box6 box6" ;
+grid-gap:0.8rem;
+text-align:center;
+color:white;
+font-size:25px;
+
+}
+
+
+
+
+
+nav{
+background-color:black;
+grid-area:nav;
+}
+main{
+background-color:blue;
+grid-area:main;
+}
+.box1{
+background-color:pink;
+grid-area:box1;
+
+}
+
+.box2{
+background-color:orange;
+grid-area:box2;
+}
+.box3{
+background-color:tomato;
+grid-area:box3;
+}
+.smallbox1{
+background-color:green;
+grid-area:smallbox1;
+
+}
+.smallbox2{
+background-color:cyan;
+grid-area:smallbox2;
+}
+.empty{
+
+grid-area:empty;
+
+}
+.smallbox3{
+background-color:purple;
+grid-area:smallbox3;
+}
+.smallbox4{
+background-color:red;
+grid-area:smallbox4;
+
+}
+.box4{
+background-color:blue;
+grid-area:box4;
+}
+.box5{
+background-color:violet;
+grid-area:box5
+
+}
+.box6{
+background-color:purple;
+grid-area:box6;
+
+}
+
+
+
+
+</style>
+</head>
+<body>
+<div class="container">
+<nav>NAV</nav>
+<main>MAIN</main>
+<div class="box1">BOX1</div>
+<div class="box2">BOX2</div>
+<div class="box3">BOX3</div>
+<div class="smallbox1">SMALLBOX1</div>
+<div class="smallbox2">SMALLBOX2</div>
+<div class="empty"></div>
+<div class="smallbox3">SMALLBOX3</div>
+<div class="smallbox4">SMALLBOX4</div>
+<div class="box4">BOX4</div>
+<div class="box5">BOX5</div>
+<div class="box6">BOX6</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>

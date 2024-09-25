@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stylish 3D Cube Animation</title>
+    <style>
+        /* Basic Reset and Full-Height Setup */
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px; /* Slightly deeper perspective */
+            background-color: #333; /* Dark background for contrast */
+        }
+
+        /* Cube Container */
+        .cube {
+            position: relative;
+            width: 200px; /* Increased size */
+            height: 200px; /* Increased size */
+            transform-style: preserve-3d; /* Allows 3D positioning */
+            transform: rotateX(0deg) rotateY(0deg);
+            animation: rotate 5s infinite linear; /* Faster rotation */
+        }
+
+        /* Face Styling */
+        .face {
+            position: absolute;
+            width: 200px; /* Matching size */
+            height: 200px; /* Matching size */
+            background: rgba(255, 255, 255, 0.9);
+            border: 2px solid #666; /* Stylish border */
+            font-size: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #222;
+            font-family: 'Arial', sans-serif;
+            font-weight: bold; /* Bold text for better visibility */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Subtle shadow for depth */
+        }
+
+        /* Positioning Each Face of the Cube */
+        .front  { transform: translateZ(100px); }
+        .back   { transform: rotateY(180deg) translateZ(100px); }
+        .left   { transform: rotateY(-90deg) translateZ(100px); }
+        .right  { transform: rotateY(90deg) translateZ(100px); }
+        .top    { transform: rotateX(90deg) translateZ(100px); }
+        .bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+        /* Animation Keyframes */
+        @keyframes rotate {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Cube Structure -->
+    <div class="cube">
+        <div class="face front">Front</div>
+        <div class="face back">Back</div>
+        <div class="face left">Left</div>
+        <div class="face right">Right</div>
+        <div class="face top">Top</div>
+        <div class="face bottom">Bottom</div>
+    </div>
+</body>
+</html>
