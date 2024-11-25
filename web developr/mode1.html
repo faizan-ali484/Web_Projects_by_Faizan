@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Light and Dark Mode</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .container {
+            text-align: center;
+            padding: 50px;
+        }
+
+        .light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        .dark-mode {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Light and Dark Mode Example</h1>
+        <button id="toggle-button">Toggle Dark/Light Mode</button>
+    </div>
+    <script>
+        // Get the button and body elements
+        const toggleButton = document.getElementById('toggle-button');
+        const body = document.body;
+
+        // Check the current mode and set the initial mode
+        const currentTheme = localStorage.getItem('theme');
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            body.classList.remove('light-mode'); // Ensure light mode class is removed
+        } else {
+            body.classList.add('light-mode');
+            body.classList.remove('dark-mode'); // Ensure dark mode class is removed
+        }
+
+        // Toggle the theme on button click
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark'); // Save the theme in local storage
+            } else {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light'); // Save the theme in local storage
+            }
+        });
+    </script>
+</body>
+</html>

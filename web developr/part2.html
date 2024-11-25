@@ -1,0 +1,429 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Finder</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9fafb;
+            color: #333;
+            overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #007BFF;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            color: white;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .navbar .logo {
+            font-size: 1.8em;
+            font-weight: bold;
+        }
+        .navbar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        .navbar ul li {
+            margin: 0 15px;
+        }
+        .navbar ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        .navbar ul li a:hover {
+            color: #FFD700;
+        }
+
+        /* Add Post Section Below Navbar */
+        .add-post-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 20px 10px;
+            margin-top: 70px;
+        }
+        .add-post-container .plus-icon {
+            font-size: 2.5em;
+            color: #007BFF;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+        .add-post-container .plus-icon:hover {
+            color: #0056b3;
+        }
+        .add-post-container .search-bar {
+            display: flex;
+            align-items: center;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            padding: 5px;
+            width: 50%;
+        }
+        .add-post-container .search-bar input {
+            width: 100%;
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .add-post-container .search-bar button {
+            padding: 8px;
+            border: none;
+            border-radius: 5px;
+            background-color: #FFD700;
+            color: black;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .add-post-container .search-bar button:hover {
+            background-color: #FFC107;
+        }
+
+        /* Post Box Styles */
+        .post-box {
+            margin: 20px auto;
+            max-width: 600px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+        .post-box:hover {
+            transform: translateY(-2px);
+        }
+        .post-box textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            resize: none;
+            background-color: #f9f9f9;
+        }
+        .post-box textarea:focus {
+            outline: none;
+            border-color: #007BFF;
+            background-color: #fff;
+        }
+        .post-box input[type="file"] {
+            margin-top: 15px;
+            padding: 5px;
+        }
+        .post-box button {
+            margin-top: 15px;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            float: right;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .post-box button:hover {
+            background-color: #0056b3;
+            transform: translateY(-2px);
+        }
+
+        /* Image Preview */
+        .image-preview {
+            display: none;
+            max-width: 200px;
+            margin-top: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Posts Container Styles */
+        .posts-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+        }
+        .post {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        .post:hover {
+            transform: translateY(-2px);
+        }
+        .post p {
+            font-size: 1em;
+            margin: 0;
+            color: #555;
+        }
+        .post img {
+            max-width: 150px; /* Set maximum width for the image */
+            height: auto;
+            margin-top: 15px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .post .edit-delete-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .post .edit-delete-buttons button {
+            background: transparent;
+            border: none;
+            color: #007BFF;
+            font-size: 1em;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: color 0.3s;
+        }
+        .post .edit-delete-buttons button:hover {
+            color: #FF4500;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        .footer a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .footer a:hover {
+            color: #FFC107;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar ul li {
+                margin: 0 10px;
+            }
+            .add-post-container {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .add-post-container .plus-icon {
+                font-size: 3em;
+                margin-bottom: 10px;
+            }
+            .add-post-container .search-bar {
+                width: 100%;
+            }
+            .post img {
+                max-width: 100px; /* Smaller size for mobile screens */
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">Skill Finder</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#skills">Find Skills</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Add Post Section Below Navbar -->
+    <div class="add-post-container">
+        <div class="plus-icon" id="plusIcon">+</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for skills...">
+            <button>Search</button>
+        </div>
+    </div>
+
+    <!-- Post Box -->
+    <div class="post-box">
+        <textarea id="postContent" placeholder="What's on your mind?"></textarea>
+        <input type="file" id="postImage" accept="image/*">
+        <img id="imagePreview" class="image-preview">
+        <button id="postButton">Post</button>
+    </div>
+
+    <!-- Posts Container -->
+    <div class="posts-container" id="postsContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Skill Finder | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+    </footer>
+
+  <script>
+    const postButton = document.getElementById('postButton');
+    const postContent = document.getElementById('postContent');
+    const postImage = document.getElementById('postImage');
+    const postsContainer = document.getElementById('postsContainer');
+    const imagePreview = document.getElementById('imagePreview');
+    const plusIcon = document.getElementById('plusIcon');
+
+    // Load posts from localStorage on page load
+    document.addEventListener('DOMContentLoaded', () => {
+        const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+        savedPosts.forEach(post => createPostElement(post.content, post.imageSrc));
+    });
+
+    // Show preview of selected image
+    postImage.addEventListener('change', (e) => {
+        const file = e.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (event) => {
+                imagePreview.src = event.target.result;
+                imagePreview.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+        } else {
+            imagePreview.style.display = 'none';
+        }
+    });
+
+    // Add a new post
+    postButton.addEventListener('click', () => {
+        const content = postContent.value.trim();
+        const imageSrc = imagePreview.src;
+
+        if (content || (imageSrc && imagePreview.style.display === 'block')) {
+            createPostElement(content, imageSrc);
+            savePostToLocalStorage(content, imageSrc);
+
+            // Clear the post box inputs
+            postContent.value = '';
+            postImage.value = '';
+            imagePreview.style.display = 'none';
+        } else {
+            alert('Please write something or select an image to post!');
+        }
+    });
+
+    // Function to create a new post element
+    function createPostElement(content, imageSrc) {
+        const post = document.createElement('div');
+        post.className = 'post';
+
+        let postHtml = '';
+        if (content) postHtml += `<p>${content}</p>`;
+        if (imageSrc && imagePreview.style.display === 'block') {
+            postHtml += `<img src="${imageSrc}" alt="Post Image">`;
+        }
+
+        post.innerHTML = postHtml;
+
+        // Create Edit and Delete buttons
+        const editDeleteButtons = document.createElement('div');
+        editDeleteButtons.className = 'edit-delete-buttons';
+
+        const editButton = document.createElement('button');
+        editButton.textContent = 'Edit';
+        editButton.onclick = () => editPost(post);
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.onclick = () => deletePost(post);
+
+        editDeleteButtons.appendChild(editButton);
+        editDeleteButtons.appendChild(deleteButton);
+        post.appendChild(editDeleteButtons);
+
+        postsContainer.prepend(post);
+    }
+
+    // Save post to localStorage
+    function savePostToLocalStorage(content, imageSrc) {
+        const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+        savedPosts.push({ content, imageSrc });
+        localStorage.setItem('posts', JSON.stringify(savedPosts));
+    }
+
+    // Delete a post
+    function deletePost(post) {
+        const content = post.querySelector('p')?.textContent || '';
+        const imageSrc = post.querySelector('img')?.src || '';
+
+        // Remove from localStorage
+        let savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+        savedPosts = savedPosts.filter(
+            p => p.content !== content || p.imageSrc !== imageSrc
+        );
+        localStorage.setItem('posts', JSON.stringify(savedPosts));
+
+        // Remove from DOM
+        post.remove();
+    }
+
+    // Edit a post
+    function editPost(post) {
+        const contentElement = post.querySelector('p');
+        const imageElement = post.querySelector('img');
+
+        const oldContent = contentElement?.textContent || '';
+        const oldImageSrc = imageElement?.src || '';
+
+        const newContent = prompt('Edit your post:', oldContent);
+        if (newContent !== null) contentElement.textContent = newContent;
+
+        const newImage = prompt('Enter the URL for a new image (leave blank for no change):', oldImageSrc);
+        if (newImage && imageElement) imageElement.src = newImage;
+
+        // Update localStorage
+        let savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+        const postIndex = savedPosts.findIndex(
+            p => p.content === oldContent && p.imageSrc === oldImageSrc
+        );
+        if (postIndex > -1) {
+            savedPosts[postIndex] = {
+                content: newContent !== null ? newContent : oldContent,
+                imageSrc: newImage || oldImageSrc,
+            };
+            localStorage.setItem('posts', JSON.stringify(savedPosts));
+        }
+    }
+
+    // Toggle the post box visibility when clicking the Plus Icon
+    plusIcon.addEventListener('click', () => {
+        const postBox = document.querySelector('.post-box');
+        postBox.style.display = postBox.style.display === 'block' ? 'none' : 'block';
+    });
+</script>
+
+
+</body>
+</html>

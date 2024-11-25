@@ -1,0 +1,161 @@
+<html>
+<head>
+<style>
+body{
+background-image: radial-gradient( circle 311px at 8.6% 27.9%,  rgba(62,147,252,0.57) 12.9%, rgba(239,183,192,0.44) 91.2% );
+}
+@font-face {
+  font-family: 'La Flibustisre';
+  src: url(https://res.cloudinary.com/areeba/raw/upload/v1650492268/La_Flibusti%C3%A8re.ttf);
+}
+
+body {
+	overflow: hidden;	
+}
+
+.wedding-card {
+	margin-top: 80px;
+	position: relative;
+	perspective: 1000px;
+	width: 500px;
+	height: 500px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+p {
+	color: #BE8D49;
+	font-family: 'Lobster', cursive;
+	text-align: center;
+	font-size: 14px;
+}
+
+h1 {
+	font-family: 'La Flibustisre';
+	color: #BE8D49;
+}
+
+.container {
+	background: url('https://res.cloudinary.com/areeba/image/upload/v1650488986/938ba925943764901f2c2889ea835d42--dark-navy-blue-cobalt-blue.jpg');
+	object-fit: cover;
+	width: 500px;
+	height: 500px;
+	position: absolute;
+	margin-left: auto;
+	border-left: 1px solid rgb(181,119,41);
+	transform-origin: left center;
+  	transition: 2s;   
+	margin-right: auto;
+}
+
+.invite h1 {
+	text-align: center;	
+	font-size: 45px;
+	margin-top: 0px;
+	margin-bottom: 0;
+	 background: -webkit-linear-gradient(#F7D182, #A16A2A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+hr {
+	margin-top: 20px;
+	margin-bottom: -10px; 
+	width: 200px;
+	border-top: 0.5px solid rgb(181,119,41) !important;
+	border: none;
+}
+
+.invite {
+	position: relative;
+	top: -140px;
+}
+
+.border-1 {
+	width: 200px;
+}
+
+.border-2 {
+	width: 200px;
+	transform: scaleX(-1);
+	float: right;
+}
+
+.border-3 {
+	width: 200px;
+	transform: scaleY(-1);
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+}
+
+.border-4 {
+	width: 200px;
+	transform: scaleY(-1) scaleX(-1);
+	position: absolute;
+	bottom: 0px;
+	right: 0px;
+}
+
+.cover {
+	background: url('https://res.cloudinary.com/areeba/image/upload/v1650488986/938ba925943764901f2c2889ea835d42--dark-navy-blue-cobalt-blue.jpg');
+	object-fit: cover;
+	width: 500px;
+	height: 500px;
+	transform-origin: left center;
+  	transition: 2s;
+  	z-index:1;
+	position: absolute;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.cover:hover {
+	 transform: rotateY(-100deg);
+}
+
+.cover-style {
+	width: 500px;
+	position: relative;
+	margin-left: auto;
+}
+
+.cover-heading {
+	position: relative;
+	bottom: 310px;
+	left: 120px;
+	font-size: 50px;
+	 background: -webkit-linear-gradient(#F7D182, #A16A2A);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+</style>
+</head>
+<body>
+
+
+
+<div class="wedding-card">
+	<div class="cover">
+		<img src="https://res.cloudinary.com/areeba/image/upload/v1650491336/Pngtree_golden_line_mandala_pattern_decorative_5960487.png" class="cover-style" />
+		<h1 class="cover-heading">Emma & Liam</h1>
+	</div>
+	<div class="container">
+		<img src="https://res.cloudinary.com/areeba/image/upload/v1650490204/free-golden-deco-corner-clipart-photo-background-gold-corner-border-lace-pattern-text-graphics-transparent-png-1536307.png" class="border-1" />
+		<img src="https://res.cloudinary.com/areeba/image/upload/v1650490204/free-golden-deco-corner-clipart-photo-background-gold-corner-border-lace-pattern-text-graphics-transparent-png-1536307.png" class="border-2" />
+		<div class="invite">
+			<h1>Invitation</h1>
+			<p>We would be delighted with your attendance <br>at the wedding of </p>
+			<h1>Emma</h1>
+			<p>D/O rotodina & rotodile</p>
+			<h1>Liam</h1>
+			<p>S/O panda & pandoria</p>
+			<hr>
+			<p>Second day of Eid, 7:30 to Midnight, <br>The Levi Palace, karachi, Pakistan</p>
+		</div>
+		<img src="https://res.cloudinary.com/areeba/image/upload/v1650490204/free-golden-deco-corner-clipart-photo-background-gold-corner-border-lace-pattern-text-graphics-transparent-png-1536307.png" class="border-3" />
+		<img src="https://res.cloudinary.com/areeba/image/upload/v1650490204/free-golden-deco-corner-clipart-photo-background-gold-corner-border-lace-pattern-text-graphics-transparent-png-1536307.png" class="border-4" />
+	</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Faizan Developer Portfolio</title>
+  <style>
+    /* General Styling */
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+      font-family: 'Arial', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Gradient Background Animation */
+    body {
+      background: linear-gradient(45deg, #6a11cb, #2575fc, #ff6a00, #ee0979);
+      background-size: 400% 400%;
+      animation: gradientTransition 15s ease infinite;
+      color: white;
+    }
+
+    @keyframes gradientTransition {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    /* Hero Section */
+    .hero {
+      margin-bottom: 40px;
+      padding: 40px 20px;
+      border-radius: 15px;
+      background: rgba(0, 0, 0, 0.2);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-heading {
+      font-size: 3em;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #ffd700; /* Golden color */
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    .hero-description {
+      font-size: 1.2em;
+      line-height: 1.6;
+      opacity: 0.9;
+      color: white;
+      max-width: 800px;
+      margin: auto;
+    }
+
+    /* Project Section */
+    .header {
+      font-size: 2.5em;
+      font-weight: bold;
+      margin-bottom: 40px;
+      color: #ffd700; /* Golden color */
+      text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Project Cards */
+    .projects {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+    }
+
+    .project-card {
+      backdrop-filter: blur(10px);
+      border-radius: 15px;
+      width: 300px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: white;
+    }
+
+    .project-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .project-title {
+      font-size: 1.5em;
+      margin-bottom: 10px;
+    }
+
+    .project-description {
+      font-size: 1em;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    /* Button Styling */
+    .view-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 1em;
+      font-weight: bold;
+      color: white;
+      background: #2575fc;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .view-button:hover {
+      background: #1a5dcc;
+      box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .footer {
+      margin-top: 30px;
+      font-size: 1em;
+      opacity: 0.7;
+	 
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+      <div class="hero-heading">Faizan Developer</div>
+      <div class="hero-description">
+        Welcome to my portfolio! I’m Faizan, a passionate Full Stack Developer with a love for creating dynamic, responsive, and user-friendly web applications. 
+        I specialize in modern web technologies and take pride in delivering high-quality solutions that meet client expectations. 
+        Dive into my projects to see what I’ve been working on!
+      </div>
+    </div>
+
+    <!-- Project Section -->
+    <div class="header">My Projects</div>
+    <div class="projects">
+      <!-- Project 1 -->
+      <div class="project-card" style="background: rgba(255, 99, 132, 0.8);">
+        <div class="project-title">Portfolio</div>
+        <div class="project-description">"A dynamic showcase of Faizan's skills and projects which is my protfolio."</div>
+        <a href="protofile.html" class="view-button" target="_blank">View My Project</a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card" style="background: rgba(54, 162, 235, 0.8);">
+        <div class="project-title">Social Media Dashboard</div>
+        <div class="project-description">"A user-friendly platform for online shopping and enjoyment."</div>
+        <a href="social media .html" class="view-button" target="_blank">View My Project</a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card" style="background: rgba(75, 192, 192, 0.8);">
+        <div class="project-title">School Timetable</div>
+        <div class="project-description">"An efficient app for managing your daily tasks."</div>
+        <a href="timetable.html" class="view-button" target="_blank">View My Project</a>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card" style="background: rgba(255, 206, 86, 0.8);">
+        <div class="project-title">Weather Dashboard</div>
+        <div class="project-description">"A real-time weather tracking application."</div>
+        <a href="weather.html" class="view-button" target="_blank">View My Project</a>
+      </div>
+
+      <!-- Project 5 -->
+      <div class="project-card" style="background: rgba(153, 102, 255, 0.8);">
+        <div class="project-title">Card Website</div>
+        <div class="project-description">"A cahrming and beautiful website."</div>
+        <a href="complte website.html" class="view-button" target="_blank">View My Project</a>
+      </div>
+
+      <!-- Project 6 -->
+      <div class="project-card" style="background: rgba(255, 159, 64, 0.8);">
+        <div class="project-title">Expense Tracker</div>
+        <div class="project-description">"An app to track your wellness goals."</div>
+        <a href="expense tracker.html" class="view-button" target="_blank">View My Project</a>
+      </div>
+
+      <!-- New Cards -->
+      <div class="project-card" style="background: rgba(0, 204, 102, 0.8);">
+        <div class="project-title">Wedding Card</div>
+        <div class="project-description">"Two hearts, one journey, a lifetime of love—celebrating the beginning of forever."</div>
+        <a href="card3.html" class="view-button" target="_blank">View My Project</a>
+      </div>
+
+      <div class="project-card" style="background: rgba(255, 140, 0, 0.8);">
+        <div class="project-title">Hospital Managment</div>
+        <div class="project-description">"Empowering care through efficient management, where compassion meets precision for the well-being of every patient."</div>
+        <a href="hospital website.html" class="view-button" target="_blank">View My Project</a>
+      </div>
+
+      <div class="project-card" style="background: rgba(0, 128, 255, 0.8);">
+        <div class="project-title">Online Skill Finder</div>
+        <div class="project-description">"A platform for interactive and engaging online people for the welfare of their home."</div>
+        <a href="bigproject.html" class="view-button" target="_blank">View My Project</a>
+      </div>
+
+      <div class="project-card" style="background: rgba(240, 128, 128, 0.8);">
+        <div class="project-title">Animations</div>
+        <div class="project-description">"An beautiful design cube shape."</div>
+        <a href="3d.html" class="view-button" target="_blank">View My Project</a>
+      </div>
+
+      <div class="project-card" style="background: rgba(102, 51, 153, 0.8);">
+        <div class="project-title">Grid</div>
+        <div class="project-description">"Stay updated with this powerful app to make your work easy."</div>
+        <a href="grid3.html" class="view-button" target="_blank">View My Project</a>
+      </div>
+
+      <div class="project-card" style="background: rgba(0, 204, 204, 0.8);">
+        <div class="project-title">Calculator</div>
+        <div class="project-description">"From simple sums to complex solutions, a calculator turns numbers into possibilities."</div>
+        <a href="cal.html" class="view-button" target="_blank">View My Project</a>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">© 2024 Faizan Developer</div>
+  </div>
+</body>
+</html>

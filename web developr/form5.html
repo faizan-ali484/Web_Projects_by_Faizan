@@ -1,0 +1,152 @@
+<!DOCTYPE HTML>  
+<html>
+<head>
+<style>
+body {
+    background-color: #f9fcff;
+    background-image: linear-gradient(147deg, #f9fcff 0%, #dee4ea 74%);
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    flex-direction: column;
+}
+
+.phpform {
+    background-color: #ffffff;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #555555;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+input[type="text"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    border-radius: 20px;
+    border: 1px solid #cccccc;
+    background-color: #f0f0f0;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+input[type="text"]:focus, textarea:focus {
+    background-color: #ffffff;
+    border-color: #7db1e0;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="radio"] {
+    margin: 0 10px;
+}
+
+input[type="submit"] {
+    background-color: green;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+input[type="submit"]:hover {
+    background-color: #ff4500;
+}
+
+.output-container {
+    background-color: #ffffff;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: left;
+    color: #555555;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.output-container h3 {
+    color: #333333;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.output-container p {
+    line-height: 1.6;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+}
+</style>
+</head>
+<body>  
+
+<?php
+$name = $email = $gender = $comment = $website = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  $name = test_input($_POST["name"]);
+  $email = test_input($_POST["email"]);
+  $website = test_input($_POST["website"]);
+  $comment = test_input($_POST["comment"]);
+  $gender = test_input($_POST["gender"]);
+}
+
+function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+?>
+
+<div class="phpform">
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
+        <h2>PHP Form Validation Example</h2>
+        Name: <input type="text" name="name">
+        E-mail: <input type="text" name="email">
+        Website: <input type="text" name="website">
+        Comment: <textarea name="comment" rows="5" cols="40"></textarea>
+        Gender:
+        <input type="radio" name="gender" value="female">Female
+        <input type="radio" name="gender" value="male">Male
+        <input type="radio" name="gender" value="other">Other
+        <br><br>
+        <input type="submit" name="submit" value="Submit">
+    </form>
+</div>
+
+<?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    echo "<div class='output-container'>";
+    echo "<h3>Form Submission Details</h3>";
+    echo "<p><strong>Name:</strong> " . $name . "</p>";
+    echo "<p><strong>Email:</strong> " . $email . "</p>";
+    echo "<p><strong>Website:</strong> " . $website . "</p>";
+    echo "<p><strong>Comment:</strong> " . $comment . "</p>";
+    echo "<p><strong>Gender:</strong> " . $gender . "</p>";
+    echo "</div>";
+}
+?>
+
+</body>
+</html>

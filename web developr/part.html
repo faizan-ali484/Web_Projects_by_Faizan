@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Finder</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #74ebd5, #9face6); /* Gradient background */
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 15px 20px;
+            font-size: 1.8rem;
+            text-align: center;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+           background-color:tomato;
+            margin: 10px 20px 20px;
+			box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+			border-radius:50px;
+			
+        }
+
+        /* Post Box Styles */
+        .post-box {
+            background: #ffffff;
+            margin: 20px auto;
+            padding: 25px 30px;
+            max-width: 600px;
+            border-radius: 12px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .post-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .post-box textarea {
+            width: 100%;
+            height: 120px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            resize: none;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+            background-color: #f8f9fa;
+        }
+
+        .post-box textarea:focus {
+            outline: none;
+            border-color: #4CAF50;
+            background-color: #fff;
+            box-shadow: 0 0 6px rgba(76, 175, 80, 0.3);
+        }
+
+        .post-box input[type="file"] {
+            border: 1px solid #ddd;
+            padding: 8px 15px;
+            border-radius: 8px;
+            background: #f8f9fa;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .post-box input[type="file"]:hover {
+            background-color: #f1f1f1;
+        }
+
+        .post-box img {
+            display: none;
+            max-width: 150px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            margin-top: 10px;
+        }
+
+        .post-box button {
+            align-self: flex-end;
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 12px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        .post-box button:hover {
+            background-color: #45a049;
+            transform: translateY(-3px);
+        }
+
+        .post-box button:active {
+            background-color: #388E3C;
+            transform: translateY(1px);
+        }
+
+        /* Posts Container */
+        .posts-container {
+            width: 100%; /* Ensures the container spans the full width */
+            margin: 20px auto;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .post {
+            width: 100%; /* Ensures each post spans the full width */
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+            position: relative;
+            transition: transform 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .post:hover {
+            transform: translateY(-2px);
+        }
+
+        .post p {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .post img {
+            max-width: 100px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .edit-delete-buttons {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+
+        .edit-delete-buttons button {
+            background: transparent;
+            border: none;
+            color: #4CAF50;
+            font-size: 1rem;
+            margin-left: 10px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .edit-delete-buttons button:hover {
+            color: #FF4500;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: auto;
+        }
+
+        .footer a {
+            color: #FFD700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .footer a:hover {
+            color: #FFC107;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">Skill Finder</div>
+    <div class="subtitle">Discover and share skills effortlessly. Connect with talents, showcase your expertise, and learn from a vibrant community.</div>
+
+    <!-- Post Box -->
+    <div class="post-box">
+        <textarea id="postContent" placeholder="Write your post here..."></textarea>
+        <input type="file" id="postImage" accept="image/*">
+        <img id="imagePreview" class="image-preview" alt="Preview Image">
+        <button id="postButton">Post</button>
+    </div>
+
+    <!-- Posts Container -->
+    <div id="postsContainer" class="posts-container"></div>
+
+    <div class="footer">
+        &copy; 2024 Skill Finder | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a>
+    </div>
+
+    <script>
+        const postButton = document.getElementById('postButton');
+        const postContent = document.getElementById('postContent');
+        const postImage = document.getElementById('postImage');
+        const postsContainer = document.getElementById('postsContainer');
+        const imagePreview = document.getElementById('imagePreview');
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+            savedPosts.forEach(post => createPostElement(post.content, post.imageSrc));
+        });
+
+        postImage.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (event) => {
+                    imagePreview.src = event.target.result;
+                    imagePreview.style.display = 'block';
+                };
+                reader.readAsDataURL(file);
+            } else {
+                imagePreview.style.display = 'none';
+            }
+        });
+
+        postButton.addEventListener('click', () => {
+            const content = postContent.value.trim();
+            const imageSrc = imagePreview.src;
+
+            if (content || (imageSrc && imagePreview.style.display === 'block')) {
+                createPostElement(content, imageSrc);
+                savePostToLocalStorage(content, imageSrc);
+
+                postContent.value = '';
+                postImage.value = '';
+                imagePreview.style.display = 'none';
+            } else {
+                alert('Please write something or upload an image!');
+            }
+        });
+
+        function createPostElement(content, imageSrc) {
+            const post = document.createElement('div');
+            post.className = 'post';
+
+            let postHtml = '';
+            if (content) postHtml += `<p>${content}</p>`;
+            if (imageSrc) postHtml += `<img src="${imageSrc}" alt="Post Image">`;
+
+            post.innerHTML = postHtml;
+
+            const editDeleteButtons = document.createElement('div');
+            editDeleteButtons.className = 'edit-delete-buttons';
+
+            const editButton = document.createElement('button');
+            editButton.textContent = 'Edit';
+            editButton.onclick = () => editPost(post);
+
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.onclick = () => deletePost(post);
+
+            editDeleteButtons.appendChild(editButton);
+            editDeleteButtons.appendChild(deleteButton);
+            post.appendChild(editDeleteButtons);
+
+            postsContainer.prepend(post);
+        }
+
+        function editPost(postElement) {
+            const contentElement = postElement.querySelector('p');
+            const imageElement = postElement.querySelector('img');
+
+            postContent.value = contentElement ? contentElement.textContent : '';
+            imagePreview.src = imageElement ? imageElement.src : '';
+            imagePreview.style.display = imageElement ? 'block' : 'none';
+
+            postElement.remove();
+            removePostFromLocalStorage(postElement);
+        }
+
+        function deletePost(postElement) {
+            postElement.remove();
+            removePostFromLocalStorage(postElement);
+        }
+
+        function savePostToLocalStorage(content, imageSrc) {
+            const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+            savedPosts.unshift({ content, imageSrc });
+            localStorage.setItem('posts', JSON.stringify(savedPosts));
+        }
+
+        function removePostFromLocalStorage(postElement) {
+            const content = postElement.querySelector('p')?.textContent || '';
+            const imageSrc = postElement.querySelector('img')?.src || '';
+            const savedPosts = JSON.parse(localStorage.getItem('posts')) || [];
+            const updatedPosts = savedPosts.filter(post => post.content !== content || post.imageSrc !== imageSrc);
+            localStorage.setItem('posts', JSON.stringify(updatedPosts));
+        }
+    </script>
+</body>
+</html>

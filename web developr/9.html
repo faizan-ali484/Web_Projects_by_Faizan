@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Form Categories</title>
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            text-align: center;
+        }
+        .button-group {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 15px;
+            cursor: pointer;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        .form-section {
+            display: none; /* Hide forms by default */
+        }
+        .form-section.active {
+            display: block; /* Show active form */
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Form Categories</h2>
+    <div class="button-group">
+        <button onclick="showForm('personalForm')">Personal Information</button>
+        <button onclick="showForm('jobForm')">Job Information</button>
+        <button onclick="showForm('feedbackForm')">Feedback</button>
+    </div>
+
+    <!-- Forms -->
+    <div id="personalForm" class="form-section">
+        <h3>Personal Information</h3>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="age">Age:</label>
+            <input type="number" id="age" name="age" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="jobForm" class="form-section">
+        <h3>Job Information</h3>
+        <form>
+            <label for="jobTitle">Job Title:</label>
+            <input type="text" id="jobTitle" name="jobTitle" required>
+            <label for="company">Company:</label>
+            <input type="text" id="company" name="company" required>
+            <label for="experience">Years of Experience:</label>
+            <input type="number" id="experience" name="experience" required>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+
+    <div id="feedbackForm" class="form-section">
+        <h3>Feedback</h3>
+        <form>
+            <label for="feedback">Your Feedback:</label>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    // Function to display the selected form and hide others
+    function showForm(formId) {
+        const forms = document.querySelectorAll('.form-section');
+        forms.forEach(form => {
+            form.classList.remove('active');
+        });
+        document.getElementById(formId).classList.add('active');
+    }
+</script>
+
+</body>
+</html>

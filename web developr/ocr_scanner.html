@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR Scanner with Table</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #scanner-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        #video {
+            width: 300px;
+            height: auto;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+        }
+        #result {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+        table {
+            margin-top: 20px;
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">OCR Scanner with Table Display</h1>
+    <div id="scanner-container">
+        <video id="video" autoplay></video>
+        <div id="result">Put text in front of the camera and click "Capture & Process"</div>
+        <button id="capture-btn">Capture & Process</button>
+    </div>
+    <table id="scanTable">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Extracted Text</th>
+                <th>Timestamp</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Scanned results will appear here -->
+        </tbody>
+    </table>
+
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@2.1.4/dist/tesseract.min.js"></script>
+    <script>
+        const video = document.getElementById('video');
+        const captureButton = document.getElementById('capture-btn');
+        const result = document.getElementById('result');
+        const scanTableBody = document.querySelector('#scanTable tbody');
+        let scanCount = 0;
+
+        // Access the camera
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                video.srcObject = stream;
+            })
+            .catch(err => {
+                console.error('Camera access error:', err);
+                alert('Unable to access camera. Please check permissions.');
+            });
+
+        // Function to capture the video frame
+        function captureFrame(video) {
+            const canvas = document.createElement('canvas');
+            canvas.width = video.videoWidth;
+            canvas.height = video.videoHeight;
+            const ctx = canvas.getContext('2d');
+            ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+            return canvas;
+        }
+
+        // Function to process the captured image with Tesseract.js
+        async function processImageWithOCR(canvas) {
+            result.textContent = 'Processing image...';
+            try {
+                const { data: { text } } = await Tesseract.recognize(canvas, 'eng', {
+                    logger: info => console.log(info), // Logs OCR progress
+                });
+                console.log('OCR Success:', text);
+                return text.trim() || 'No text detected';
+            } catch (error) {
+                console.error('OCR Error:', error.message);
+                result.textContent = `Error processing image: ${error.message}`;
+                return 'Error processing image';
+            }
+        }
+
+        // Function to add data to the table
+        function addToTable(data) {
+            scanCount++;
+            const row = document.createElement('tr');
+            const timestamp = new Date().toLocaleString();
+
+            row.innerHTML = `
+                <td>${scanCount}</td>
+                <td>${data}</td>
+                <td>${timestamp}</td>
+            `;
+            scanTableBody.appendChild(row);
+        }
+
+        // Capture and process image on button click
+        captureButton.addEventListener('click', async () => {
+            const canvas = captureFrame(video);
+
+            // Verify the captured frame
+            if (!canvas) {
+                result.textContent = 'Error: Unable to capture video frame.';
+                return;
+            }
+
+            const ocrText = await processImageWithOCR(canvas);
+
+            // Update result and table
+            if (ocrText === 'Error processing image') {
+                result.textContent = 'Error processing image. Ensure text is clear and camera is working.';
+            } else {
+                result.textContent = `Extracted Text: ${ocrText}`;
+                addToTable(ocrText);
+            }
+        });
+    </script>
+</body>
+</html>

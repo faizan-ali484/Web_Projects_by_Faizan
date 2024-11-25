@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account & Login</title>
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #74ebd5, #9face6); /* Gradient background */
+        }
+
+        .container {
+            background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent white */
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            width: 350px;
+            max-width: 90%;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            font-size: 1rem;
+            box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        input:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 8px rgba(76, 175, 80, 0.3);
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            background-color: #388E3C;
+            transform: translateY(1px);
+        }
+
+        .form-link {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        .form-link a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+
+        .form-link a:hover {
+            text-decoration: underline;
+        }
+
+        .error {
+            color: red;
+            font-size: 0.9rem;
+            text-align: center;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="authContainer" class="container">
+    <h2 id="formTitle">Create Account</h2>
+
+    <!-- Registration Form -->
+    <div id="signUpForm">
+        <input type="email" id="email" placeholder="Email" />
+        <input type="password" id="password" placeholder="Password" />
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" />
+        <button onclick="signUp()">Sign Up</button>
+        <div class="form-link">
+            Already have an account? <a href="javascript:void(0);" onclick="showLoginForm()">Login</a>
+        </div>
+    </div>
+
+    <!-- Login Form -->
+    <div id="loginForm" style="display: none;">
+        <input type="email" id="loginEmail" placeholder="Email" />
+        <input type="password" id="loginPassword" placeholder="Password" />
+        <button onclick="login()">Login</button>
+        <div class="form-link">
+            Don't have an account? <a href="javascript:void(0);" onclick="showSignUpForm()">Create one</a>
+        </div>
+        <!-- Add a link to the website -->
+        <div class="form-link">
+            After login, go to: <a href="https://www.yourwebsite.com" target="_blank">Skill Finder</a>
+        </div>
+    </div>
+
+    <div class="error" id="errorMessage"></div>
+</div>
+
+<script>
+    // Show the Sign Up form
+    function showSignUpForm() {
+        document.getElementById('formTitle').innerText = 'Create Account';
+        document.getElementById('signUpForm').style.display = 'block';
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('errorMessage').innerText = '';
+    }
+
+    // Show the Login form
+    function showLoginForm() {
+        document.getElementById('formTitle').innerText = 'Login';
+        document.getElementById('signUpForm').style.display = 'none';
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('errorMessage').innerText = '';
+    }
+
+    // Sign Up function
+    function signUp() {
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+
+        if (!email || !password || !confirmPassword) {
+            document.getElementById('errorMessage').innerText = 'Please fill in all fields.';
+            return;
+        }
+
+        if (password !== confirmPassword) {
+            document.getElementById('errorMessage').innerText = 'Passwords do not match.';
+            return;
+        }
+
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const existingUser = users.find(user => user.email === email);
+
+        if (existingUser) {
+            document.getElementById('errorMessage').innerText = 'This email is already registered.';
+            return;
+        }
+
+        users.push({ email, password });
+        localStorage.setItem('users', JSON.stringify(users));
+
+        alert('Account created successfully!');
+        showLoginForm();
+    }
+
+    function login() {
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+
+        if (!email || !password) {
+            document.getElementById('errorMessage').innerText = 'Please fill in all fields.';
+            return;
+        }
+
+        const users = JSON.parse(localStorage.getItem('users')) || [];
+        const user = users.find(user => user.email === email && user.password === password);
+
+        if (!user) {
+            document.getElementById('errorMessage').innerText = 'Invalid email or password.';
+            return;
+        }
+
+        alert('Login successful!');
+        window.location.href = "part.html"; // Replace with your website's URL
+    }
+</script>
+
+</body>
+</html>
